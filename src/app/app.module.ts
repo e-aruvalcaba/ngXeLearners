@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CursosresumenComponent } from './componentes/cursosresumen/cursosresumen.component';
 import es from '@angular/common/locales/es-MX';
 import { registerLocaleData } from '@angular/common';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -19,7 +20,8 @@ registerLocaleData(es);
     AppComponent,
     MenuComponent,
     InicioComponent,
-    CursosresumenComponent
+    CursosresumenComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

@@ -8,12 +8,12 @@
   <!-- SideMenu -->
   <div class="row h-100 d-flex">
     <div class="col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 resetpadmar h-100" style="background-color: rgba(246, 246, 246, 0.986); 
-             min-width: 120px; border-right: 1px solid rgba(0,0,0,.1);
-             box-shadow: 6px 0 6px rgba(0,0,0,.1)">
+             min-width: 100px; border-right: 1px solid rgba(0,0,0,.1);
+             box-shadow: 6px 0 6px rgba(0,0,0,.1);">
       <div class="contenedorBoton">
         <div *ngFor="let modulo of modulos; let i = index;">
           <button type="button" class="btn btn-light col-12 d-flex justify-content-between mb-1 mt-1"
-            (click)="actualizarRuta()" [routerLink]="[modulo.ruta]">
+            (click)="actualizarRuta()" [routerLink]="[modulo.ruta]" style="font-size: 13px;">
             <span>{{modulo.nombre}}</span>
             <span>
               <fa-icon [icon]="faAngleRight"></fa-icon>
@@ -23,7 +23,7 @@
 
       </div>
     </div>
-    <div class="col-9 col-sm-9 col-md-10 col-lg-10 col-xl-11 resetpadmar"
+    <div class="col-9 col-sm-9 col-md-10 col-lg-10 col-xl-11 resetpadmar d-column justify-content-center"
       style="padding: 10px; overflow:auto; max-height: 100vh;">
       <!-- Navegacion -->
       <div id="navigation" class="navigation">
@@ -31,12 +31,10 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item" aria-current="page"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item" *ngFor="let nav of navegacion"><a>{{nav | titlecase}}</a></li>
-            <!-- <li class="breadcrumb-item" aria-current="page">Cursos</li> -->
           </ol>
         </nav>
       </div>
       <!-- Contenido -->
-
       <div id="contenido">
         <router-outlet></router-outlet>
       </div>

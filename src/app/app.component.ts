@@ -53,16 +53,15 @@ export class AppComponent implements OnInit {
   }
 
   actualizarRuta(newUrl:string[]) {
-    console.log(newUrl);
+    if(!newUrl){
+      return;
+    }
+
     if(newUrl.length == 2 && newUrl[1]==""){
       newUrl=[];
     }else{
       newUrl.shift();
     }
     this.navegacion = newUrl;
-  }
-
-  rutasss(data:string){
-    this.actualizarRuta(data.split("/"));
   }
 }
