@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  // hardcoded
+  menuopciones:string[] = [
+    "Correo Electronico",
+    "Administrar cursos",
+    "Analiticas personales",
+    "Configuracion de cuenta",
+    "Cerrar Sesion en eTrainersCMS"
+  ]
+
   constructor() { }
 
   ngOnInit() {

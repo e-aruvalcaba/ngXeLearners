@@ -1,6 +1,30 @@
-<nav class="navbar navbar-light bg-light" style="background-color: rgba(15, 62, 148, 0.965)!important; box-shadow: 6px 0 6px rgba(0,0,0,.1); border-right: 1px solid rgba(0,0,0,.12);">
-    <a class="navbar-brand" href="#">
-        <img src="../../../assets/img/logo_tmp.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-        eLearners
-    </a>
+<nav class="navmenu navbar navbar-light bg-light row d-flex justify-content-between" style="background-color: rgba(42, 97, 200, 0.965)!important; 
+                                                 box-shadow: 6px 0 6px rgba(0,0,0,.1); 
+                                                 border-right: 1px solid rgba(0,0,0,.12);">
+    <div class="d-none d-sm-block">
+        <a class="navbar-brand">
+            <img src="../../../assets/img/logo_tmp.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            eLearners
+        </a>
+    </div>
+    <div class="user-options d-block" style="margin-right: 1%;">
+        <div ngbDropdown>
+            <button class="btn" id="dropdownConfig" ngbDropdownToggle>
+                <a class="navbar-brand">
+                    <img src="../../../assets/img/logo_tmp.jpg" width="30" height="30" class="d-inline-block align-top"
+                        alt="">
+                    Julio Cesar Mellado
+                </a>
+            </button>
+             <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="width: 100%;">
+                <div class="d-flex" style="width: 100%; flex-flow: column;">
+                    <button type="button" class="btn btn-light col-12 d-flex justify-content-between mb-1 mt-1"
+                        ngbDropdownItem *ngFor="let opcion of menuopciones">
+                        <span>{{opcion}}</span>
+                    </button>
+                </div>
+            </div> 
+
+        </div> <!-- end div ngbDropdown -->
+    </div> <!-- end init structure  -->
 </nav>

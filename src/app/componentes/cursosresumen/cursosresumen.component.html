@@ -1,0 +1,39 @@
+<!-- <div id="navigation" class="navigation">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cursos</li>
+        </ol>
+      </nav>      
+</div> -->
+<div class="d-flex justify-content-center">
+    <h3>Resumen de los Cursos Realizados</h3>
+</div>
+<div>
+    <table class="table">
+        <caption>List of users</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <!-- <th scope="col">id</th> -->
+            <th scope="col">Nombre</th>
+            <th scope="col">Compañia</th>
+            <th scope="col">Fecha de Publicacion</th>
+            <th scope="col">Tecnología</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curso of cursos; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{curso.name}}</td>
+            <td>{{curso.company}}</td>
+            <td>{{curso.date | date: 'fullDate'}}</td>
+            <td>{{curso.tech}}</td>
+            <td><button class="btn btn-warning" onclick="prompt('Desea editar el Curso')">Editar</button></td>
+            <td><button class="btn btn-danger" onclick="prompt('Desea Eliminar el Curso')">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
