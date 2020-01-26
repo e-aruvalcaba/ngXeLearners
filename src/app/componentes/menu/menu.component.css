@@ -4,3 +4,6 @@
     }
  }
 
+.dropdown::after{
+    display: none;
+}

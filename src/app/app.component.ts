@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface modulos {
   nombre: string,
@@ -40,7 +41,12 @@ export class AppComponent implements OnInit {
   /**
    * Constructor
    */
-  constructor(private _router: Router) {
+  constructor(private _router: Router, private _translate: TranslateService) {
+     // this language will be used as a fallback when a translation isn't found in the current language
+    _translate.setDefaultLang('es');
+
+     // the lang to use, if the lang isn't available, it will use the current loader to get them
+    _translate.use('es');
   }
 
   ngOnInit() {

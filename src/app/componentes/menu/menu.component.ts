@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
@@ -14,11 +15,23 @@ export class MenuComponent implements OnInit {
     "Analiticas personales",
     "Configuracion de cuenta",
     "Cerrar Sesion en eTrainersCMS"
-  ]
+  ];
 
-  constructor() { }
+  idiomas:object[]=[{
+    value: "es",
+    text: "language.spanish"
+  },{
+    value: "en",
+    text: "language.english"
+  }];
+
+  constructor(private _translate:TranslateService) { }
 
   ngOnInit() {
+  }
+  cambiarIdioma(idioma:string){
+    console.log(`Nuevo Idioma: ${idioma}`);
+    this._translate.use(idioma);
   }
 
 }

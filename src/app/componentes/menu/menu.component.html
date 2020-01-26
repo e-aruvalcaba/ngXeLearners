@@ -8,23 +8,39 @@
         </a>
     </div>
     <div class="user-options d-block" style="margin-right: 1%;">
-        <div ngbDropdown>
-            <button class="btn" id="dropdownConfig" ngbDropdownToggle>
-                <a class="navbar-brand">
-                    <img src="../../../assets/img/logo_tmp.jpg" width="30" height="30" class="d-inline-block align-top"
-                        alt="">
-                    Julio Cesar Mellado
-                </a>
-            </button>
-             <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="width: 100%;">
-                <div class="d-flex" style="width: 100%; flex-flow: column;">
-                    <button type="button" class="btn btn-light col-12 d-flex justify-content-between mb-1 mt-1"
-                        ngbDropdownItem *ngFor="let opcion of menuopciones">
-                        <span>{{opcion}}</span>
-                    </button>
-                </div>
-            </div> 
+        <div class="row d-flex justify-content-between align-items-center">
+            <div ngbDropdown class="d-inline">
+                <button class="btn btn-outline dropis" id="dropdownConfig" ngbDropdownToggle>
+                    <a class="navbar-brand">
+                        <img src="../../../assets/img/logo_tmp.jpg" width="30" height="30" class="d-inline-block align-top"
+                            alt="">
+                        Julio Cesar Mellado
+                    </a>
+                </button>
+                 <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="width: 100%;">
+                    <div class="d-flex" style="width: 100%; flex-flow: column;">
+                        <button type="button" class="btn btn-light col-12 d-flex justify-content-between mb-1 mt-1"
+                            ngbDropdownItem *ngFor="let opcion of menuopciones">
+                            <span>{{opcion}}</span>
+                        </button>
+                    </div>
+                </div> 
+            </div> <!-- end div ngbDropdown -->
+            <div ngbDropdown>
+                <button class="btn" id="dropdownConfig" ngbDropdownToggle>
+                    <span>{{'language.title' | translate}}</span>
+                </button>
+                 <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="width: 100%;">
+                    <div class="d-flex" style="width: 100%; flex-flow: column;">
+                        <button type="button" (click)="cambiarIdioma(idioma.value)" class="btn btn-light col-12 d-flex justify-content-between mb-1 mt-1"
+                            ngbDropdownItem *ngFor="let idioma of idiomas">
+                            <span>{{ idioma.text | translate}}</span>
+                        </button>
+                    </div>
+                </div> 
+    
+            </div> <!-- end div ngbDropdown -->
+        </div>
 
-        </div> <!-- end div ngbDropdown -->
     </div> <!-- end init structure  -->
 </nav>
